@@ -16,3 +16,8 @@ spec:
         namespace: o11y
       interval: 10m
   values:
+    server:
+      podSecurityContext:
+        fsGroup: 0
+        runAsNonRoot: false
+        runAsUser: 0
