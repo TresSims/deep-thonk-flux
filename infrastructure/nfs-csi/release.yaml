@@ -16,6 +16,8 @@ spec:
         namespace: nfs-csi
       interval: 10m
   values:
+    feature:
+      enableFSGroupPolicy: true
     storageClasses:
       - name: nfs-retain
         annotations:
