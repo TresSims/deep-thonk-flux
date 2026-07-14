@@ -5,7 +5,10 @@ metadata:
   name: cert-manager-helm
   namespace: cert-manager
 spec:
-  interval: 1m0s
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  interval: 10m0s
   url: oci://quay.io/jetstack/charts/cert-manager
   ref:
-    semver: ">=0.0.0-0"
+    semver: "v1.21.0"
