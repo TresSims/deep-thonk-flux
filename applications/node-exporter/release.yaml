@@ -10,3 +10,9 @@ spec:
     name: node-exporter-helm
   interval: 10m
   values:
+    podAnnotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "9100"
+    service:
+      annotations:
+        prometheus.io/scrape: "false"
