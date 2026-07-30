@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - local-instance.yaml
   - release.yaml
+  - source.yaml
