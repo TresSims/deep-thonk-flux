@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 env:
-  OCI_REPO: "oci://ghcr.io/tressims/manifests/tres-sims"
+  OCI_REPO: "oci://ghcr.io/tressims/deep-thonk-flux"
 
 jobs:
   build:
