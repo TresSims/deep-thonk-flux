@@ -15,9 +15,6 @@ spec:
         name: grafana-helm
         namespace: o11y
       interval: 10m
-  valuesFrom:
-    - kind: ConfigMap
-      name: alloy-config
   values:
     alloy:
       extraPorts:
@@ -27,13 +24,9 @@ spec:
           protocol: http
 
       configMap:
+        create: false
         name: alloy-config
-        # content is passed to TPL, so we inline consume the components
-        # we want to use, to keep our code minimal, and maintainable
-        content: |-
-          {{ .alloyBase }}
-
-          {{ .alloyIngress }}
+        key: "."
 
       # -- Path to where Grafana Alloy stores data
       # By default, data is lost between reboots.

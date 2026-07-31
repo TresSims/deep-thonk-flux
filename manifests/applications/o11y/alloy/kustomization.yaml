@@ -8,7 +8,7 @@ configMapGenerator:
   - name: alloy-config
     namespace: o11y
     files:
-      - alloyBase=config.alloy
-      - alloyIngress=ingress.alloy
+      - config.alloy
+      - ingress.alloy
     options:
       disableNameSuffixHash: true
