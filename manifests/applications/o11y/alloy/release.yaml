@@ -20,7 +20,7 @@ spec:
       extraPorts:
         - name: collector
           containerPort: 4317
-          protocol: http
+          protocol: TCP
 
       configMap:
         create: false
