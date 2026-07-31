@@ -16,8 +16,8 @@ spec:
         namespace: o11y
       interval: 10m
   valuesFrom:
-    kind: ConfigMap
-    name: alloy-config
+    - kind: ConfigMap
+      name: alloy-config
   values:
     alloy:
       extraPorts:
