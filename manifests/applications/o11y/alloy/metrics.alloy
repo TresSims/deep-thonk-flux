@@ -1,0 +1,12 @@
+discovery.kubernetes "apiserver" {
+	role = "endpoints"
+
+	namespaces {
+		names = ["default"]
+	}
+
+	selectors {
+		role  = "enpoints"
+		label = "component=apiserver,provider=kubernetes"
+	}
+}
