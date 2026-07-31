@@ -10,5 +10,8 @@ configMapGenerator:
     files:
       - config.alloy
       - ingress.alloy
+      - metrics.alloy
+      - logs.alloy
+      - outputs.alloy
     options:
       disableNameSuffixHash: true

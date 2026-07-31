@@ -202,26 +202,6 @@ prometheus.scrape "pods" {
 	forward_to = [prometheus.remote_write.vmetrics.receiver]
 }
 
-// Scrape services
-prometheus.scrape "services" {
-	targets    = discovery.relabel.services.output
-	forward_to = [prometheus.remote_write.vmetrics.receiver]
-}
-
-// kubernetes metrics
-discovery.kubernetes "apiserver" {
-	role = "endpoints"
-
-	namespaces {
-		names = ["default"]
-	}
-
-	selectors {
-		role  = "enpoints"
-		label = "component=apiserver,provider=kubernetes"
-	}
-}
-
 discovery.relabel "apiserver" {
 	targets = discovery.kubernetes.apiserver.targets
 
@@ -253,17 +233,3 @@ discovery.relabel "apiserver" {
 	}
 }
 
-prometheus.scrape "apiserver" {
-	targets    = discovery.relabel.apiserver.output
-	forward_to = [prometheus.remote_write.vmetrics.receiver]
-
-	scheme            = "https"
-	bearer_token_file = "/var/run/secrets/kubernetes.io/serviceaccount/token"
-
-	tls_config {
-		ca_file              = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-		insecure_skip_verify = false
-	}
-
-	scrape_interval = "30s"
-}
