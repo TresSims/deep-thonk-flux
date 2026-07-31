@@ -19,8 +19,7 @@ spec:
     alloy:
       extraPorts:
         - name: collector
-          nodePort: 4317
-          targetPort: 4317
+          containerPort: 4317
           protocol: http
 
       configMap:
