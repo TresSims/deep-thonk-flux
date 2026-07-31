@@ -20,7 +20,7 @@ spec:
       extraPorts:
         - name: collector
           port: 4317
-          protocol: TCP
+          targetPort: 4317
 
       configMap:
         create: false
