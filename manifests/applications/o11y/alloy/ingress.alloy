@@ -1,0 +1,5 @@
+otelcol.receiver.otlp "collection" {
+		http = {
+				endpoint = "127.0.0.1:4317"
+			}
+	}
