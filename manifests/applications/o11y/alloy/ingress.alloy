@@ -4,7 +4,15 @@ otelcol.receiver.otlp "collection" {
 	}
 
 	output {
-		metrics = [prometheus.remote_write.vmetrics.receiver]
-		logs    = [loki.write.k8s.receiver]
+		metrics = [otelcol.exporter.prometheus.ingress_metrics]
+		logs    = [otelcol.exporter.loki.ingress_logs]
 	}
+}
+
+otelcol.exporter.loki "ingress_logs" {
+	forward_to = [loki.write.k8s.receiver]
+}
+
+otelcol.exporter.prometheus "ingress_metrics" {
+	forward_to = [prometheus.remote_write.vmetrics.receiver]
 }
