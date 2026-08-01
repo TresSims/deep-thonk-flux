@@ -8,11 +8,11 @@ configMapGenerator:
   - name: alloy-config
     namespace: o11y
     files:
-      - config.alloy
-      - discovery.alloy
-      - ingress.alloy
-      - logs.alloy
-      - metrics.alloy
-      - outputs.alloy
+      - config/config.alloy
+      - config/discovery.alloy
+      - config/ingress.alloy
+      - config/logs.alloy
+      - config/metrics.alloy
+      - config/outputs.alloy
     options:
       disableNameSuffixHash: true
