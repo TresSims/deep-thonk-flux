@@ -32,7 +32,7 @@ spec:
       storagePath: /tmp/alloy
 
       enableHttpServerPort: true
-      listenAddr: 127.0.0.1
+      listenAddr: 0.0.0.0
       listenPort: 12345
 
       listenScheme: HTTP
