@@ -4,8 +4,8 @@ otelcol.receiver.otlp "collection" {
 	}
 
 	output {
-		metrics = [otelcol.exporter.prometheus.ingress_metrics]
-		logs    = [otelcol.exporter.loki.ingress_logs]
+		metrics = [otelcol.exporter.prometheus.ingress_metrics.input]
+		logs    = [otelcol.exporter.loki.ingress_logs.input]
 	}
 }
 
