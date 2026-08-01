@@ -4,7 +4,7 @@ otelcol.receiver.otlp "collection" {
 	}
 
 	output {
-		metrics = [prometheus.remote_write.vmetrics]
-		logs    = [loki.write.k8s]
+		metrics = [prometheus.remote_write.vmetrics.receiver]
+		logs    = [loki.write.k8s.receiver]
 	}
 }

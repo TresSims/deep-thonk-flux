@@ -19,7 +19,7 @@ discovery.kubernetes "apiserver" {
 	}
 
 	selectors {
-		role  = "enpoints"
+		role  = "endpoints"
 		label = "component=apiserver,provider=kubernetes"
 	}
 }
