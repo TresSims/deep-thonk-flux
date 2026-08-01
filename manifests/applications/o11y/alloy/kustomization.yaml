@@ -13,5 +13,6 @@ configMapGenerator:
       - metrics.alloy
       - logs.alloy
       - outputs.alloy
+      - discovery.alloy
     options:
       disableNameSuffixHash: true

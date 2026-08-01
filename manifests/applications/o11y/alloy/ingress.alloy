@@ -1,11 +1,10 @@
 otelcol.receiver.otlp "collection" {
-	http = {
-			endpoint = "127.0.0.1:4317",
+	http {
+		endpoint = "127.0.0.1:4317"
 	}
 
-	output (
-  	metrics = [prometheus.remote_write.vmetrics]
-		logs = [loki.write.k8s]
-		traces = []
-	)
+	output {
+		metrics = [prometheus.remote_write.vmetrics]
+		logs    = [loki.write.k8s]
+	}
 }
