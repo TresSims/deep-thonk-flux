@@ -1,14 +1,6 @@
-discovery.kubernetes "apiserver" {
-	role = "endpoints"
-
-	namespaces {
-		names = ["default"]
-	}
-
-	selectors {
-		role  = "enpoints"
-		label = "component=apiserver,provider=kubernetes"
-	}
+prometheus.scrape "pods" {
+	targets    = discovery.relabel.pods.output
+	forward_to = [prometheus.remote_write.vmetrics.receiver]
 }
 
 prometheus.scrape "apiserver" {
