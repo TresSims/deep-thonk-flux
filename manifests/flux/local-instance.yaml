@@ -22,7 +22,7 @@ spec:
     patches:
       - target:
           kind: OCIRepository
-          name: flux-sync
+          name: flux-system
         patch: |
           - op: replace
             path: /spec/ref
@@ -30,7 +30,7 @@ spec:
               semver: ">=0.1.0"
       - target:
           kind: OCIRepository
-          name: flux-sync
+          name: flux-system
         patch: |
           - op: add
             path: /spec/verify
