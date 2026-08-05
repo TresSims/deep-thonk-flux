@@ -44,20 +44,27 @@ spec:
       enableReporting: false
 
     service:
-      annotations:
-        tailscale.com/expose: "true"
+      annotations: {}
 
     ingress:
-      enabled: false
+      enabled: true
       ingressClassName: tailscale
+      # An empty `hosts` makes the chart emit a single hostless rule whose
+      # backend port comes from `faroPort`, which is what the tailscale
+      # operator wants. Note `extraPaths` is only rendered inside the `hosts`
+      # loop, so it is silently dropped when `hosts` is empty.
       hosts: []
-      extraPaths:
-        - path: /*
-          backend:
-            service:
-              name: alloy
-              port:
-                number: 4317
+      # -- Backend port for the hostless rule. Points at the Alloy UI rather
+      # than the chart default of 12347 (the Faro receiver), which the service
+      # does not expose.
+      faroPort: 12345
+      path: /
+      pathType: Prefix
+      # -- The operator uses the first TLS host as the tailnet machine name,
+      # so Alloy is served at https://alloy.<tailnet>.ts.net
+      tls:
+        - hosts:
+            - alloy
 
     image:
       registry: "docker.io"
