@@ -43,8 +43,12 @@ spec:
 
       enableReporting: false
 
+    service:
+      annotations:
+        tailscale.com/expose: "true"
+
     ingress:
-      enabled: true
+      enabled: false
       ingressClassName: tailscale
       hosts: []
       extraPaths:
