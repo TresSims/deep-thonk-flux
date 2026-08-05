@@ -46,6 +46,14 @@ spec:
     ingress:
       enabled: true
       ingressClassName: tailscale
+      hosts: []
+      extraPaths:
+        - path: /*
+          backend:
+            service:
+              name: alloy
+              port:
+                number: 4317
 
     image:
       registry: "docker.io"
