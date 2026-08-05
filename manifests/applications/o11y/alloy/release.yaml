@@ -45,7 +45,7 @@ spec:
 
     ingress:
       enabled: true
-      ingressClassName: tailscale.com/ts-ingress
+      ingressClassName: tailscale
 
     image:
       registry: "docker.io"
