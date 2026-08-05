@@ -43,6 +43,10 @@ spec:
 
       enableReporting: false
 
+    ingress:
+      enabled: true
+      ingressClassName: tailscale.com/ts-ingress
+
     image:
       registry: "docker.io"
       repository: grafana/alloy
