@@ -5,3 +5,4 @@ resources:
   - secret-store.yaml
   - external-secrets.yaml
   - namespace.yaml
+  - source.yaml
