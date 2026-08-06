@@ -6,6 +6,7 @@ resources:
   - vault
   - node-exporter
   - metrics-server
+  - kube-state-metrics
   - technitium
   - tailscale
   - tetragon
