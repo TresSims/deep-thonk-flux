@@ -7,4 +7,3 @@ resources:
   - namespace.yaml
   - source.yaml
   - release.yaml
-  # - proxy-group.yaml
