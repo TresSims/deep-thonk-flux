@@ -10,5 +10,10 @@ spec:
     kind: OCIRepository
     name: flux-system
   path: "./flux"
-  prune: true
   timeout: 1m
+  prune: false
+  ignore:
+    - paths:
+        - "/spec/suspend"
+      target:
+        kind: Kustomization
