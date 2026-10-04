@@ -22,7 +22,7 @@ spec:
     patches:
       - target:
           kind: Kustomization
-          name: flux-sync
+          name: flux-system
         patch: |
           - op: replace
             path: /spec/prune
